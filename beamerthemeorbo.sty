@@ -1,0 +1,26 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+\usetikzlibrary{positioning}
+
+% Colours definitions
+\definecolor{unibored}{HTML}{bb2e29}
+\definecolor{uniboblue}{HTML}{0967b2}
+
+% Settings
+\useinnertheme{orbo}
+\useoutertheme{orbo}
+\usecolortheme{orbo}
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow=true] 
+
+% Print summary at each section:
+\AtBeginSection[]{%
+  \begin{frame}{Plan}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+
+\mode<all>

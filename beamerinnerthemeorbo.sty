@@ -1,0 +1,43 @@
+\mode<presentation>
+
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    
+    \node (bologna) at (9.45,0.7) {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{./figures/bologna_strip.png}};
+    \fill[color=black,opacity=0.4] (3.05,0) rectangle(\the\paperwidth,1.9);
+    
+    \node[right=7 of bologna.west,anchor=west,yshift=-5] (tw) {\includegraphics[width=0.5cm,keepaspectratio]{./figures/twitter_logo.png}};
+    \node[right=-0.1 of tw.east,anchor=west,yshift=-0.05cm] {\textcolor{white}{\scriptsize @OR\_Unibo}};
+    
+    \fill[color=unibored] (0,0) rectangle(2.95,1.9);
+    \node[color=white] (unibo) at (1.25,1.3) {OR-Unibo};
+    \node[below=0.5 of unibo.west,anchor=west,color=white] (or) {\tiny Operational Research};
+    \node[below=0.25 of or.west,anchor=west,color=white] {\tiny Group};
+    
+    \ifnum\thepage>1\relax%
+      \fill[white,opacity=1] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+    \fi
+  \end{tikzpicture}
+}
+
+% Title page
+\defbeamertemplate*{title page}{texsx}[1][]{%
+  \begin{beamercolorbox}[wd=12cm,center,sep=8pt,#1]{title page header}
+    \usebeamerfont{title}{\inserttitle}%
+  \end{beamercolorbox}%
+  \vskip0.5cm%
+  \begin{beamercolorbox}[wd=12cm,center,#1]{author}
+    \usebeamerfont{author}{\insertauthor}%
+  \end{beamercolorbox}
+  \vskip0.5cm
+  \begin{beamercolorbox}[wd=12cm,center,#1]{date}
+    \usebeamerfont{author}{\insertdate}%
+  \end{beamercolorbox}
+}
+
+% Items
+\setbeamertemplate{items}[square]
+\setbeamertemplate{sections/subsections in toc}[square]
+
+\mode<all>
